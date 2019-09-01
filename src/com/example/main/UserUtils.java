@@ -1,4 +1,6 @@
-package com.example.season;
+package com.example.main;
+
+import com.example.season.Season;
 
 import java.util.Scanner;
 
@@ -11,8 +13,9 @@ public class UserUtils {
         Season season = Season.fromName(userSeason);
         String[] months = Season.fromMonths(userSeason);
         System.out.println(season.getName() + ":");
-        for (String s : months) {
-            System.out.print(s + ", ");
+        for (String m : months) {
+            System.out.print(m + ", ");
         }
+        input.close();
     }
 }

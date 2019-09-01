@@ -22,7 +22,7 @@ public enum Season {
         return months;
     }
 
-    public static Season fromName(String name) {
+    public static Season fromName(String name) throws NullPointerException {
         Season[] nameValues = values();
         for (Season s : nameValues) {
             if (s.name.equals(name)) {
@@ -32,7 +32,7 @@ public enum Season {
         return null;
     }
 
-    public static String[] fromMonths(String name) {
+    public static String[] fromMonths(String name) throws NullPointerException {
         Season[] months = values();
         for (Season s : months) {
             if (s.name.equals(name)) {
