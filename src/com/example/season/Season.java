@@ -1,5 +1,6 @@
 package com.example.season;
 
+
 public enum Season {
     SPRING("wiosna", new String[]{"marzec", "kwiecień", "maj"}),
     SUMMER("lato", new String[]{"czerwiec", "lipiec", "sierpień"}),
@@ -9,7 +10,7 @@ public enum Season {
     private final String name;
     private final String[] months;
 
-    Season(String name, String[] months) {
+    private Season(String name, String[] months) {
         this.name = name;
         this.months = months;
     }
@@ -22,7 +23,7 @@ public enum Season {
         return months;
     }
 
-    public static Season fromName(String name) throws NullPointerException {
+    public static Season fromName(String name) {
         Season[] nameValues = values();
         for (Season s : nameValues) {
             if (s.name.equals(name)) {
@@ -32,7 +33,7 @@ public enum Season {
         return null;
     }
 
-    public static String[] fromMonths(String name) throws NullPointerException {
+    public static String[] getMonthsOfSeason(String name) {
         Season[] months = values();
         for (Season s : months) {
             if (s.name.equals(name)) {
